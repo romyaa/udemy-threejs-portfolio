@@ -1,0 +1,120 @@
+@import "./base.scss";
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 99;
+    background: $sherbet-orange;
+    display: grid;
+    place-items: center;
+    font-family: "Amatic SC", sans-serif;
+    &__box {
+        position: relative;
+        border: 3px solid $bright-blue;
+        width: 500px;
+        height: 200px;
+        @media (max-width: 600px) {
+            & {
+                width: 90vw;
+            }
+        }
+    }
+    &__bar {
+        position: absolute;
+        background: white;
+        height: 10px;
+        width: 90%;
+        transform: translateX(-50%);
+        top: 50%;
+        left: 50%;
+        border-radius: 2px;
+        &--inner {
+            background: $bright-green;
+            height: 100%;
+            width: 0%;
+            border-radius: 2px;
+        }
+    }
+    &__text {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        font-size: 40px;
+        font-weight: 700;
+        color: white;
+        @media (max-width: 300px) {
+            & {
+                font-size: 36px;
+            }
+        }
+        &--O {
+            width: 15px;
+            height: 15px;
+            margin: 0 3px;
+            border-radius: 50%;
+            border: 1.5px solid $bright-green;
+            box-shadow: 0 0 0 0px $bright-green;
+            transform: scale(1);
+            animation: pulse 1.5s infinite;
+            @keyframes pulse{
+                0% {
+                    background: none;
+                    transform: scale(.95);
+                    box-shadow: 0 0 0 0px rgba($bright-green, .7);
+                }
+                75% {
+                    transform: scale(1);
+                    background: white;
+                    box-shadow: 0 0 0 9px rgba($bright-green, 0);
+                }
+                100% {
+                    transform: scale(.95);
+                    background: none;
+                    box-shadow: 0 0 0 0px rgba($bright-green, 0);
+                }
+            }
+        }
+        &--underline {
+            width: 85%;
+            height: 1px;
+            background: $bright-blue;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &__counter {
+        position: absolute;
+        top: 70%;
+        left: 0;
+        color: white;
+        font-size: 30px;
+        font-weight: 700;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px 0 20px;
+        &--number {
+            color: $bright-green ;
+        }
+    }
+    &__width_animation {
+        animation: width_animation 1s forwards;
+        @keyframes width_animation {
+            0% {
+                width: 85%;
+            }
+            100% {
+                width: 250px;
+            }
+        }
+    }
+}
