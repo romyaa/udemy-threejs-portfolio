@@ -208,5 +208,14 @@ svg {
     width: 250px;
   }
 }
+.loading__svg {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  opacity: 0;
+  z-index: 1;
+}
 
 /*# sourceMappingURL=/config.0874d187.css.map */

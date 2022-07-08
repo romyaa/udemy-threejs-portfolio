@@ -1,0 +1,1 @@
+{"version":3,"sources":["assets/js/config.js"],"names":[],"mappings":";;;AACA,aADA,QAAA,uBACA,QAAA","file":"config.2b4fee64.js","sourceRoot":"../src","sourcesContent":["import \"../styles/base.scss\"\nimport \"../styles/loader.scss\""]}
